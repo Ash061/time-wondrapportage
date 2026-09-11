@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f8f6" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>TIME wondrapportage</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Wondobservatie</p>
+          <h1>TIME rapportagehulp</h1>
+          <p class="intro">Leg vast wat je ziet, ruikt, meet of wat de cliënt aangeeft. De tool stelt geen diagnose.</p>
+        </div>
+        <div class="privacy-note" aria-label="Privacy-informatie">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4.5 5.2v5.9c0 4.8 3.2 9.2 7.5 10.9 4.3-1.7 7.5-6.1 7.5-10.9V5.2L12 2Zm0 2.2 5.3 2.3v4.6c0 3.6-2.1 7-5.3 8.6-3.2-1.6-5.3-5-5.3-8.6V6.5L12 4.2Zm-1 4v3H8v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
+          <span>Vul geen naam of geboortedatum in. Invoer wordt niet opgeslagen.</span>
+        </div>
+      </header>
+
+      <section class="context-card" aria-labelledby="basis-heading">
+        <div class="section-heading">
+          <span class="step">1</span>
+          <div>
+            <h2 id="basis-heading">Basis</h2>
+            <p>Optioneel, maar handig voor een complete rapportage.</p>
+          </div>
+        </div>
+        <div class="context-grid">
+          <label>
+            <span>Plaats van de wond</span>
+            <input id="location" type="text" maxlength="80" placeholder="Bijv. rechter onderbeen" autocomplete="off" />
+          </label>
+          <label>
+            <span>Datum en tijd observatie</span>
+            <input id="observedAt" type="datetime-local" />
+          </label>
+        </div>
+      </section>
+
+      <section aria-labelledby="time-heading">
+        <div class="section-heading time-title">
+          <span class="step">2</span>
+          <div>
+            <h2 id="time-heading">TIME-observaties</h2>
+            <p>Kies wat van toepassing is. Voeg alleen meetbare of zichtbare details toe.</p>
+          </div>
+        </div>
+
+        <div class="time-grid">
+          <article class="time-card tissue" data-section="tissue">
+            <div class="card-top">
+              <span class="letter">T</span>
+              <div><h3>Tissue</h3><p>Weefsel in het wondbed</p></div>
+            </div>
+            <fieldset>
+              <legend>Wat zie je?</legend>
+              <div class="chips">
+                <label><input type="checkbox" value="rood weefsel" /><span>Rood</span></label>
+                <label><input type="checkbox" value="roze weefsel" /><span>Roze</span></label>
+                <label><input type="checkbox" value="geel beslag" /><span>Geel beslag</span></label>
+                <label><input type="checkbox" value="zwart weefsel" /><span>Zwart</span></label>
+                <label><input type="checkbox" value="niet goed te beoordelen" /><span>Niet goed te zien</span></label>
+              </div>
+            </fieldset>
+            <label class="detail-label">
+              <span>Extra observatie <small>(optioneel)</small></span>
+              <textarea rows="2" maxlength="240" placeholder="Bijv. ongeveer 70% rood en 30% geel"></textarea>
+            </label>
+          </article>
+
+          <article class="time-card infection" data-section="infection">
+            <div class="card-top">
+              <span class="letter">I</span>
+              <div><h3>Infection / inflammation</h3><p>Tekenen rond of in de wond</p></div>
+            </div>
+            <fieldset>
+              <legend>Wat neem je waar?</legend>
+              <div class="chips">
+                <label><input type="checkbox" value="geen roodheid, warmte of zwelling zichtbaar" data-exclusive="true" /><span>Geen zichtbare tekenen</span></label>
+                <label><input type="checkbox" value="roodheid" /><span>Roodheid</span></label>
+                <label><input type="checkbox" value="warmte" /><span>Warmte</span></label>
+                <label><input type="checkbox" value="zwelling" /><span>Zwelling</span></label>
+                <label><input type="checkbox" value="een opvallende geur" /><span>Opvallende geur</span></label>
+                <label><input type="checkbox" value="pus zichtbaar" /><span>Pus zichtbaar</span></label>
+                <label><input type="checkbox" value="pijn door cliënt aangegeven" /><span>Pijn aangegeven</span></label>
+              </div>
+            </fieldset>
+            <label class="detail-label">
+              <span>Extra observatie <small>(optioneel)</small></span>
+              <textarea rows="2" maxlength="240" placeholder="Bijv. roodheid circa 1 cm rondom; pijnscore 4/10"></textarea>
+            </label>
+          </article>
+
+          <article class="time-card moisture" data-section="moisture">
+            <div class="card-top">
+              <span class="letter">M</span>
+              <div><h3>Moisture</h3><p>Hoeveelheid en soort wondvocht</p></div>
+            </div>
+            <fieldset>
+              <legend>Hoe vochtig is de wond?</legend>
+              <div class="chips single-choice">
+                <label><input name="moisture-amount" type="radio" value="de wond is droog" /><span>Droog</span></label>
+                <label><input name="moisture-amount" type="radio" value="weinig wondvocht" /><span>Weinig</span></label>
+                <label><input name="moisture-amount" type="radio" value="matig wondvocht" /><span>Matig</span></label>
+                <label><input name="moisture-amount" type="radio" value="veel wondvocht" /><span>Veel</span></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Kleur of soort <small>(optioneel)</small></legend>
+              <div class="chips">
+                <label><input type="checkbox" value="helder" /><span>Helder</span></label>
+                <label><input type="checkbox" value="geel" /><span>Geel</span></label>
+                <label><input type="checkbox" value="groen" /><span>Groen</span></label>
+                <label><input type="checkbox" value="bloederig" /><span>Bloederig</span></label>
+              </div>
+            </fieldset>
+            <label class="detail-label">
+              <span>Extra observatie <small>(optioneel)</small></span>
+              <textarea rows="2" maxlength="240" placeholder="Bijv. verband voor ongeveer de helft verzadigd"></textarea>
+            </label>
+          </article>
+
+          <article class="time-card edge" data-section="edge">
+            <div class="card-top">
+              <span class="letter">E</span>
+              <div><h3>Edge</h3><p>Wondranden en huid rondom</p></div>
+            </div>
+            <fieldset>
+              <legend>Wat zie je?</legend>
+              <div class="chips">
+                <label><input type="checkbox" value="intacte wondranden" /><span>Intact</span></label>
+                <label><input type="checkbox" value="verweekte wondranden" /><span>Verweekt</span></label>
+                <label><input type="checkbox" value="rode wondranden" /><span>Rood</span></label>
+                <label><input type="checkbox" value="beschadigde wondranden" /><span>Beschadigd</span></label>
+                <label><input type="checkbox" value="opgerolde wondranden" /><span>Opgerold</span></label>
+                <label><input type="checkbox" value="droge huid rondom" /><span>Huid rondom droog</span></label>
+              </div>
+            </fieldset>
+            <label class="detail-label">
+              <span>Extra observatie <small>(optioneel)</small></span>
+              <textarea rows="2" maxlength="240" placeholder="Bijv. wondrand aan bovenzijde circa 0,5 cm verweekt"></textarea>
+            </label>
+          </article>
+        </div>
+      </section>
+
+      <div class="generate-row">
+        <p id="selectionStatus" aria-live="polite">Vul minimaal één observatie in.</p>
+        <button class="primary-button" id="generateButton" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 1.3 5.2L18 4.5l-2.7 4.7L20.5 10l-5.2 1.3L18 16l-4.7-2.7L12 18.5l-1.3-5.2L6 16l2.7-4.7L3.5 10l5.2-1.3L6 4.5l4.7 2.7L12 2Z"/></svg>
+          Maak rapportage
+        </button>
+      </div>
+
+      <section class="report-card" id="reportSection" aria-labelledby="report-heading">
+        <div class="report-header">
+          <div class="section-heading">
+            <span class="step">3</span>
+            <div><h2 id="report-heading">Concept-rapportage</h2><p>Controleer en pas de tekst aan vóór je deze in het ECD plakt.</p></div>
+          </div>
+          <span class="editable-badge">Bewerkbaar</span>
+        </div>
+        <textarea id="reportOutput" rows="9" aria-label="Bewerkbare gegenereerde TIME-rapportage" placeholder="Je TIME-rapportage verschijnt hier..."></textarea>
+        <div class="report-actions">
+          <button class="secondary-button" id="resetButton" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.3 7.3A6.6 6.6 0 1 1 5.5 12H3a9 9 0 1 0 2.6-6.4L3 3v7h7L7.3 7.3Z"/></svg>
+            Opnieuw beginnen
+          </button>
+          <button class="copy-button" id="copyButton" type="button" disabled>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3h11a2 2 0 0 1 2 2v11h-2V5H8V3Zm-3 4h10a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Zm0 2v10h10V9H5Z"/></svg>
+            Kopieer rapportage
+          </button>
+        </div>
+        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+      </section>
+
+      <footer>
+        <p><strong>Let op:</strong> gebruik altijd het geldende wondzorgprotocol en schakel een bevoegde zorgprofessional in bij twijfel of verandering van de wond.</p>
+      </footer>
+    </main>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
